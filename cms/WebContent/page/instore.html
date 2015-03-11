@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CMS-入库</title>
+<link rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/cms.css">
+
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="js/instore.js"></script>
+</head>
+<body>
+<div class="banner"></div>
+<div class="navigation">
+	<a class="pill">首页</a>
+	<a href="instore.html" class="pill active">入库</a>
+	<a href="outstore.html" class="pill">出库</a>
+	<a href="store.html" class="pill">库存</a>
+	<a href="commodity.html" class="pill">商品</a>
+	<a class="pill">统计</a>
+</div>
+<div class="content">
+	<div class="pannel_detail">
+		<table>
+			<tr><td>条码：</td><td><input id="instore_code" class="form-control" type="text"/></td></tr>
+			<tr><td>名称：</td><td><input id="instore_name" class="form-control" type="text"/></td></tr>
+			<tr><td>数量：</td><td><input id="instore_count" class="form-control" type="text"/></td></tr>
+			<tr><td>入库价：</td><td><input id="instore_in_price" class="form-control" type="text"/></td></tr>
+			<tr><td>生产商：</td><td><input id="instore_productor" class="form-control" type="text"/></td></tr>
+			<tr><td>保质期（月）：</td><td><input id="instore_quality_day" class="form-control" type="text"/></td></tr>
+			<!-- <tr><td>入库时间：</td><td><input id="instore_day" class="form-control" type="text"/></td></tr> -->
+			<tr><td colspan="2"><button id="instore_add">添加</button><button id="instore_clear">清除</button></td></tr>
+		</table>
+	</div>
+		<div class="pannel_list">
+		<div id="instore_list" class="body">
+		</div>
+			<footer class="footer" style="text-align: center;" >
+				<a class="btn btn-success btn-xs" id="instore_save"><span class="glyphicon glyphicon-ok"></span>保存</a>
+				<a class="btn btn-success btn-xs" id="instore_cancel"><span class="glyphicon glyphicon-remove"></span>取消</a>
+			</footer>
+		</div>
+</div>
+</body>
+</html>

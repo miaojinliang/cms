@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 数据源配置 -->
+	<!-- MS SqlServer -->
+	<!-- 
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://192.168.1.6:1433;databaseName=uqedb" />
+		<property name="username" value="uqe" />
+		<property name="password" value="uqe" />
+	</bean>
+	 -->
+	<!-- Oracle -->
+	<!-- 
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.1.5:1521:NETDEV" />
+		<property name="username" value="CCTVUQE" />
+		<property name="password" value="cctvuqe" />
+	</bean>
+	 -->
+	<!-- MySQL -->
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/cms" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+</beans>

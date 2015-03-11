@@ -1,0 +1,114 @@
+.banner{
+	right: 0;
+	left: 0;
+	height: 107px;
+	display: block;
+	background: transparent url(../images/bg-index-logo.png) no-repeat 0 10px;
+	box-shadow: 0 0 10px 1px #2b323a;
+	z-index: 1000;
+	background-color: gray;
+}
+.navigation{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	border: solid 1px #ccc;
+}
+.pill{
+	height: 30px;
+	padding: 15px 15px;
+	font-size: 21px;
+	line-height: 30px;
+}
+.active{
+	text-shadow: blue;
+	color: red;
+}
+.content{
+	position:absolute;
+	left: 0;
+	right:0;
+	top:137px;
+	bottom: 0;
+}
+.pannel_detail{
+	position:absolute;
+	height: 100%;
+	left: 0;
+	right: 70%;
+	height: 100%;
+	text-align: center;
+}
+.pannel_list{
+	position:absolute;
+	height: 100%;
+	left: 30%;
+	right: 0;
+	height: 100%;
+	border: solid 1px #ccc;
+	text-align: center;
+	overflow: auto;
+}
+.pannel_list>.body table{
+	table-layout: fixed;
+	border-spacing: 0;
+	border-collapse: collapse;
+	line-height: 2em;
+	width: 100%;
+}
+.pannel_list>.body table th{
+	white-space: nowrap;
+	padding: 5px;
+	text-align: center;
+}
+
+.pannel_list>.body table td{
+	white-space: nowrap;
+	padding: 5px;
+	text-align: center;
+}
+
+.pannel_list>.body table tbody tr:nth-child(1) {
+	border-top: solid 1px #ccc;
+}
+
+.pannel_list>.body table tbody tr:nth-child(2n) {
+	background: #fff;
+}
+
+.pannel_list>.body table tbody tr:nth-child(2n+1) {
+	background: #f3f3f3;
+}
+
+.pannel_list>.body{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 3.5em;
+	left: 0;
+	height: auto;
+	background: #fff;
+	overflow: auto;
+	padding: 0 .5em;
+}
+.pannel_detail>table th{
+	white-space: nowrap;
+	padding: 5px;
+	text-align: center;
+}
+
+.pannel_detail>table td{
+	white-space: nowrap;
+	padding: 5px;
+	text-align: center;
+}
+.pannel_list>.footer {
+	position: absolute;
+	top: auto;
+	right: 2em;
+	bottom: 0;
+	left: 2em;
+	height: 3em;
+	border-top: solid 1px #ccc;
+	overflow: hidden;
+}

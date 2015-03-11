@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.cms.db.CommodityMapper">
+	<resultMap type="com.dream.cms.db.model.Commodity" id="rmapCommodity">
+		<id property="id" column="id"/>
+		<result property="code" column="code"/>
+		<result property="name" column="name"/>
+		<result property="inPrice" column="in_price"/>
+		<result property="outPrice" column="out_price"/>
+		<result property="productor" column="productor"/>
+		<result property="qualityDay" column="quality_day"/>
+	</resultMap>
+	
+	<insert id="insert">
+		INSERT INTO cms_commodity 
+			(
+				code,name,in_price,out_price,productor,quality_day
+			)
+		VALUES
+		 	(
+		 		#{code},#{name},#{inPrice},#{outPrice},#{productor},#{qualityDay}
+		 	)
+	</insert>
+	
+	<select id="getCommodities" resultMap="rmapCommodity">
+		SELECT * FROM cms_commodity
+	</select>
+</mapper>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<!-- ！！！！为了保持良好的可读性，此文件请不要格式化！！！！ -->
+	
+	<!--
+		以下字段类型在各数据库中均可用
+
+		CLOB	->	nvarchar(MAX)	(Microsoft SQL Server)
+		CLOB	->	CLOB			(Oracle)
+		CLOB	->	LONGTEXT		(MySQL)
+
+		BIGINT	->	bigint			(Microsoft SQL Server)
+		BIGINT	->	NUMBER(38)		(Oracle)
+		BIGINT	->	BIGINT(20)		(MySQL)
+
+		INT		->	int				(Microsoft SQL Server)
+		INT		->	INTEGER			(Oracle)
+		INT		->	INT(11)			(MySQL)
+
+		TINYINT	->	tinyint			(Microsoft SQL Server)
+		TINYINT	->	NUMBER(3)		(Oracle)
+		TINYINT	->	TINYINT(4)		(MySQL)
+
+		DOUBLE	->	float			(Microsoft SQL Server)
+		DOUBLE	->	FLOAT(24)		(Oracle)
+		DOUBLE	->	DOUBLE			(MySQL)
+
+		NVARCHAR(n)	->	nvarchar(n)			(Microsoft SQL Server)
+		NVARCHAR(n)	->	NVARCHAR2(n)		(Oracle)	n勿超过2000，如超过，请使用CLOB
+		NVARCHAR(n)	->	VARCHAR(n)			(MySQL)
+		
+		DATETIME	->	datetime			(Microsoft SQL Server)
+		DATETIME	->	TIMESTAMP(6)		(Oracle)
+		DATETIME	->	DATETIME			(MySQL)
+	-->
+	<changeSet id="createTable2015-3-9" author="Miaojinliang" context="production" failOnError="true" runInTransaction="true">
+		<createTable tableName="cms_commodity">
+			<column name="id" type="INT" autoIncrement="true"><constraints nullable="false" primaryKey="true" primaryKeyName="PK_COMMODITY"/></column>
+			<column name="code" type="NVARCHAR(50)" />
+			<column name="name" type="NVARCHAR(20)" />
+			<column name="in_price" type="DOUBLE" />
+			<column name="out_price" type="DOUBLE" />
+			<column name="productor" type="NVARCHAR(50)" />
+			<column name="quality_day" type="INT" />
+		</createTable>
+	</changeSet>
+	<changeSet id="createTable2015-3-10" author="Miaojinliang" context="production" failOnError="true" runInTransaction="true">
+		<createTable tableName="cms_instore_history">
+			<column name="id" type="INT" autoIncrement="true"><constraints nullable="false" primaryKey="true" primaryKeyName="PK_INSTORE"/></column>
+			<column name="code" type="NVARCHAR(50)" />
+			<column name="name" type="NVARCHAR(20)" />
+			<column name="price" type="DOUBLE" />
+			<column name="date" type="DATETIME" />
+			<column name="count" type="INT" />
+		</createTable>
+		<createTable tableName="cms_outstore_history">
+			<column name="id" type="INT" autoIncrement="true"><constraints nullable="false" primaryKey="true" primaryKeyName="PK_OUTSTORE"/></column>
+			<column name="code" type="NVARCHAR(50)" />
+			<column name="name" type="NVARCHAR(20)" />
+			<column name="price" type="DOUBLE" />
+			<column name="date" type="DATETIME" />
+			<column name="count" type="INT" />
+		</createTable>
+		<createTable tableName="cms_store">
+			<column name="id" type="INT" autoIncrement="true"><constraints nullable="false" primaryKey="true" primaryKeyName="PK_STORE"/></column>
+			<column name="code" type="NVARCHAR(50)" />
+			<column name="count" type="INT" />
+		</createTable>
+	</changeSet>
+</databaseChangeLog>

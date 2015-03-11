@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.cms.db.StoreMapper">
+	<resultMap type="com.dream.cms.db.model.Store" id="rmapStore">
+		<id property="id" column="id"/>
+		<result property="code" column="code"/>
+		<result property="count" column="count"/>
+		<result property="commodity.name" column="name"/>
+		<result property="commodity.inPrice" column="in_price"/>
+		<result property="commodity.outPrice" column="out_price"/>
+		<result property="commodity.productor" column="productor"/>
+		<result property="commodity.qualityDay" column="quality_day"/>
+	</resultMap>
+	
+	<insert id="insert">
+		INSERT INTO cms_store 
+			(
+				code,count
+			)
+		VALUES
+		 	(
+		 		#{code},#{count}
+		 	)
+	</insert>
+	
+	<update id="update">
+		UPDATE cms_store set
+			count = #{count}
+		WHERE code = #{code}
+	</update>
+	
+	<select id="getCommodityStore" resultMap="rmapStore">
+		SELECT * FROM cms_store WHERE code = #{code}
+	</select>
+	
+	<select id="getStore" resultMap="rmapStore">
+		SELECT s.id,s.code,s.count,c.name,c.in_price,c.out_price,c.productor,c.quality_day FROM cms_store s,cms_commodity c WHERE s.code = c.code
+	</select>
+</mapper>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CMS-出库</title>
+<link rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/cms.css">
+
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="js/outstore.js"></script>
+</head>
+<body>
+<div class="banner"></div>
+<div class="navigation">
+	<a class="pill">首页</a>
+	<a href="instore.html" class="pill">入库</a>
+	<a href="outstore.html" class="pill active">出库</a>
+	<a href="store.html" class="pill">库存</a>
+	<a href="commodity.html" class="pill">商品</a>
+	<a class="pill">统计</a>
+</div>
+<div class="content">
+	<div class="pannel_detail">
+		<table>
+			<tr><td>条码：</td><td><input id="outstore_code" class="form-control" type="text"/></td></tr>
+			<tr><td>名称：</td><td><input id="outstore_name" class="form-control" type="text"/></td></tr>
+			<tr><td>数量：</td><td><input id="outstore_count" class="form-control" type="text"/></td></tr>
+			<tr><td>售价：</td><td><input id="outstore_out_price" class="form-control" type="text"/></td></tr>
+			<tr><td>生产商：</td><td><input id="outstore_productor" class="form-control" type="text"/></td></tr>
+			<tr><td>保质期（月）：</td><td><input id="outstore_quality_day" class="form-control" type="text"/></td></tr>
+			<!-- <tr><td>入库时间：</td><td><input id="instoroutstoreclass="form-control" type="text"/></td></tr> -->
+			<tr><td colspan="2"><button id="outstore_add">添加</button><button id="outstore_clear">清除</button></td></tr>
+		</table>
+	</div>
+		<div class="pannel_list">
+		<div id="outstore_list" class="body">
+		</div>
+			<footer class="footer" style="text-align: center;" >
+				<a class="btn btn-success btn-xs" id="outstore_save"><span class="glyphicon glyphicon-ok"></span>保存</a>
+				<a class="btn btn-success btn-xs" id="outstore_cancel"><span class="glyphicon glyphicon-remove"></span>取消</a>
+				总计：<a id="pay_count">0</a>元&nbsp;&nbsp;&nbsp;&nbsp;收取<input type="text" id="pay_real" size="4"/>元&nbsp;&nbsp;&nbsp;&nbsp;找零:<a id="pay_back">0</a>元
+			</footer>
+		</div>
+</div>
+</body>
+</html>

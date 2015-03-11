@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.cms.db.InstoreHistoryMapper">
+	<resultMap type="com.dream.cms.db.model.InstoreHistory" id="rmapInstoreHistory">
+		<id property="id" column="id"/>
+		<result property="code" column="code"/>
+		<result property="name" column="name"/>
+		<result property="price" column="price"/>
+		<result property="date" column="date"/>
+		<result property="count" column="count"/>
+	</resultMap>
+	
+	<insert id="insert">
+		INSERT INTO cms_instore_history 
+			(
+				code,name,price,date,count
+			)
+		VALUES
+		 	(
+		 		#{code},#{name},#{price},#{date},#{count}
+		 	)
+	</insert>
+</mapper>
